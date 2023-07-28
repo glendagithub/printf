@@ -1,79 +1,46 @@
-./" This is _printf manpage
-.TH man 3 "28 july 2023" "1.0" "_printf man page"
+.TH _PRINTF "1" "26 JULY 2023" "0x11" "_printf man page"
 .SH NAME
-.B _printf
-- format and data.
+_printf - print data and format
 .SH SYNOPSIS
-_printf FORMAT [ARGUMENT]...
+.B printf FORMAT [ARGUMENT]...
 .SH DESCRIPTION
-Print ARGUMENT(s) according to FORMAT:
+Prints ARGUMENT(s) based on FORMAT
 
-\\"     double quote.
+If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
 
-\\\\     backslash.
+_printf will also take an indefinite amount of arguments.
 
-\\n     new line.
+Example:
+_printf("%s", text);
 
-\\r     carriage return.
+In the Example print the value of text with %s give the format of text.
 
-\\t     horizontal tab.
+.B The conversion specifiers
 
-%%     a single %.
-
-.SH CONVERSION CHARACTERS
-.B The conversion specifiers and their meanings are:
-.IP -b 
-The unsigned int argument is converted to binary.
-
-.IP -d,i
-The int argument is converted to signed decimal notation.
-
-.IP -c
-The int argument is converted to an unsigned char, and the resulting character is written.
-
-
-.IP -o,u,x,X
-The unsigned int argument is converted to ( ) notation:
-
-unsigned octal: (o).
-
-unsigned decimal: (u).
-
-unsigned hexadecimal: (x and X).
-
-.IP -s
-Characters from the array are written up to (but not including) a terminating null byte ('\0').
-	
-.IP -S 
-Characters from the array are written up to (but not including) a terminating null byte ('\0').
-
-Not include characters (0 < ASCII value < 32 or >= 127), are printed \x, , followed by the ASCII code value in hexadecimal (upper case - always 2 characters).
-
-.IP -p
-The void * pointer argument is printed in hexadecimal (as if by %#x or %#lx).
-
-.SH EXAMPLES
-
-.IP -print a string.
-_printf("This is a string");
-_printf("%s\n", "I am a string too!");
-
-.IP print char.
-_printf("Character:[%c]\n", 'H');
-
-.IP -print integuer.
-_printf("%d, %i\n", 2, 5);
+.IP %c
+- prints character.
+.IP %s
+- prints string.
+.IP %%
+- prints percentage symbol.
+.IP %d
+- prints decimal.
+.IP %i
+- prints integer number.
+.IP %b
+- prints binary representation.
+.IP %p
+- prints pointer.
+.IP %o
+- prints octal representation.
+.IP %r
+- prints string in reverse.
+.IP %u
+- prints unsigned integer.
+.IP %x
+- prints hexadecimal representation.
 
 .SH SEE ALSO
-
-.I printf(1), printf(3).
-
-.SH BUGS
-
-No known bugs.
-
+.I printf (3)
 .SH AUTHOR
-
-Glanda Rathakga
-
-.SH COPYRIGHT
+GLANDA RATHAKGA

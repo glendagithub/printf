@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * printf_oct - prints an octal number.
- * @num: number of arguments
- * Return: length of the number
+ * printf_octal - prints a binary number
+ * @num: number of arguements
+ * @printed: the printed characters
+ * Return: printed charcaters
  */
+
 int printf_octal(unsigned int num, int printed)
 {
 	int oct[100], i = 0, j;

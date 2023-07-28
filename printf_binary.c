@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * printf_bin - prints a binary number.
- * @val: arguments.
- * Return: 1.
+ * printf_binary - prints a binary number
+ * @num: number arguements
+ * @printed: the printed characters
+ * Return: printed charcaters
  */
 
 int printf_binary(unsigned int num, int printed)
